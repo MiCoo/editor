@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<!-- <meta http-equiv="X-UA-Compatible" content="IE=8" /> -->
+		<!-- <if ie=9> <endif> -->
+		<title>TRY</title>
+		<link rel="stylesheet" type="text/css" href="Meditor/css/reset.css">
+		<style type="text/css">
+		/**{margin: 0px;padding: 0px;}*/
+		img{border:none;}
+		#board{
+			width: 500px;
+			/*height:500px;*/
+			border:1px solid gray;
+			min-width: 256px;
+			margin:10px;
+		}
+		/*ul li{
+			list-style: inside disc;
+		}
+		ol li{
+			list-style: inside decimal;
+		}*/
+		</style>
+		<link rel="stylesheet" media="screen" type="text/css" href="Meditor/css/colorpicker.css" />
+		<script type="text/javascript" src="Meditor/js/jquery.js"></script>
+		<script type="text/javascript" src="Meditor/js/colorpicker.js"></script>
+		<script type="text/javascript" src="Meditor/js/editor.js"></script>
+		<script type="text/javascript" src="Meditor/js/config.js"></script>
+		<script type="text/javascript">
+		window.onload = function(){
+			var Aeditor = new Meditor('toolBar');
+			Aeditor.setData('<p>MiCoo: </p><p>welcome to test!!!  XDDDDD</p>');
+		    Aeditor.listener(function(){				//添加对编辑区的监听事件，内容若变化就触发
+		    	//alert('fd');
+		    });
+		    Aeditor.bindShowBoard(document.getElementById('show'));
+		    document.getElementById('btn').onclick = function(){
+		    	Aeditor.bindShowBoard(document.getElementById('show2'));
+		    }
+		}
+		</script>
+	</head>
+	<body>
+	<div id="board">
+		<div id="toolBar"></div>
+	</div>
+	<br>
+	<br>
+	<br>
+		<button id="btn">change</button>
+		<div id="html"></div>
+		<div id="show"></div>	
+		<div id="show2"></div>	
+	</body>
+</html>
